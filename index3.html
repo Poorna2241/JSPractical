@@ -40,15 +40,30 @@ function validateForm() {
   const phoneRegex = /^[0-9]{7,15}$/;
   const passwordRegex = /^.{6,}$/; // At least 6 characters
 
-  if (!nameRegex.test(firstName)) {
-    alert("Invalid first name. Use only letters.");
+if (!nameRegex.test(lastName)) {
+    alert("Invalid last name. Use only letters.");
     return false;
   }
-
-
-
+  
+  if (!emailRegex.test(email)) {
+    alert("Invalid email format. Please enter a valid email address.");
+    return false;
+  }
+  
+  if (!phoneRegex.test(phone)) {
+    alert("Invalid phone number. Use only numbers (7-15 digits).");
+    return false;
+  }
+  
+  if (!passwordRegex.test(password)) {
+    alert("Invalid password. Must be at least 6 characters long.");
+    return false;
+  }
+  
   alert("Form submitted successfully!");
   return true;
+
+
 }
 </script>
 
